@@ -1,6 +1,8 @@
 import { useReducer, useRef, useState } from "react";
 import './App.css';
+
 const initialState = [];
+
 const reducer = (state, action) => {
   switch (action.type) {
     case "addTask":
@@ -13,8 +15,8 @@ const reducer = (state, action) => {
       return state;
   }
 };
-function App()
-{
+
+function App() {
   const [items, dispatch] = useReducer(reducer, initialState);
   const inputRef = useRef();
   const [inputUsed, setInputUsed] = useState(false);
@@ -25,12 +27,15 @@ function App()
       setInputUsed(true);
     }
   };
+
   const toggleContent = (id) => {
     dispatch({ type: "toggleContent", selectedId: id });
   };
+
   const scrollUp = () => {
     inputRef.current.focus();
   };
+
   return (
     <div>
       <div className="up-margin"></div>
@@ -51,8 +56,19 @@ function App()
             </div>
           </div>
         ))}
+      {inputUsed 
+      }
+         <div className="new-last">
+                <button
+                    onClick={() => {
+                        inputRef.current.focus();
+                    }}
+                >
+                    Get back writing
+                </button>
+            </div>
     </div>
   );
 }
-
 export default App;
+
