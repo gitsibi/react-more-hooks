@@ -39,3 +39,11 @@ button {
   border-radius: 5px;
   cursor: pointer;
 }
+
+.new-last
+{
+  margin-bottom: 20px;
+  padding: 10px;
+  border-radius: 8px;
+}
+
